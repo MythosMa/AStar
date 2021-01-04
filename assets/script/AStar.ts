@@ -322,11 +322,12 @@ export default class NewClass extends cc.Component {
             this.graphicsBody.stroke();
         }
         //绘制最短路径的所有点
-        for (let i = 0; i < this.path.length; i++) {
+        for (let i = 0; i < this.path.length - 1; i++) {
             let node = this.path[i];
-            this.graphicsBody.strokeColor = cc.color(255, 0, 255);
-            this.graphicsBody.rect(this.rectSize * node.x, this.rectSize * node.y, this.rectSize, this.rectSize);
-            this.graphicsBody.stroke();
+            this.drawFillRect(this.graphicsBody, cc.color(255, 0, 255), this.rectSize * node.x, this.rectSize * node.y, this.rectSize, this.rectSize);
+            // this.graphicsBody.strokeColor = cc.color(255, 0, 255);
+            // this.graphicsBody.rect(this.rectSize * node.x, this.rectSize * node.y, this.rectSize, this.rectSize);
+            // this.graphicsBody.stroke();
         }
     }
 
